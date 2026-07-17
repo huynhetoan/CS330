@@ -1,115 +1,51 @@
-# CS 330 – Computer Organization & Assembly Programming  
-### University of Alabama at Birmingham (UAB)
+# CS 330 – Systems & Assembly Portfolio  
+University of Alabama at Birmingham (UAB)
 
-This repository contains my coursework, labs, and projects for **CS 330**, focusing on low‑level programming, x86‑64 assembly, CPU architecture concepts, and systems‑level problem solving.  
-Assignments include algorithm implementations in assembly, stack‑frame manipulation, recursion, memory layout, and a full Sokoban‑style game using **ncurses**.
-
----
-
-## 🧠 Course Overview
-
-CS 330 explores how computers actually execute programs at the machine level.  
-Topics include:
-
-- x86‑64 assembly language  
-- Registers, addressing modes, and calling conventions  
-- Stack frames (`push`, `pop`, `rbp`, `rsp`)  
-- Function calls and parameter passing  
-- Recursion in assembly  
-- Control flow (`cmp`, `jmp`, `je`, `jg`, etc.)  
-- Arithmetic and logic instructions  
-- Memory layout: `.data`, `.rodata`, `.text`  
-- Using `gcc` and `gdb` to compile and debug assembly  
-- Linking C and assembly together  
-- Building programs with Makefiles  
-- Terminal graphics using **ncurses**  
-- Structs, pointers, and game‑state management in C  
+This repository contains my systems‑level programming work from CS 330, focused on x86‑64 assembly, low‑level memory manipulation, CPU architecture concepts, and terminal‑based game development.  
+Below are the **three major projects** that demonstrate real embedded/systems engineering skills.
 
 ---
 
-## 🧩 Major Programming Components
+## 🔧 Projects
 
-### **1. Prime Factorization (Assembly)**  
-Implemented a full prime‑factorization routine in x86‑64 using:
+### **1. Algorithm Suite in x86‑64 Assembly**  
+Classic algorithms implemented entirely in assembly, demonstrating stack‑frame management, recursion, pointer arithmetic, and ABI‑compliant function calls.  
+**Project folder:** [`lab06`](lab06/README.md)
 
-- Division via `idiv`
-- Remainder checking
-- Looping with conditional jumps
-- Printing factors using `printf`
+### **2. Terminal-Based Sokoban Engine (C + ncurses)**  
+A full interactive Sokoban‑style puzzle game with real‑time movement, collision detection, star‑pushing logic, and dynamic terminal rendering.  
+**Project folder:** [`lab07`](lab07/README.md)
 
-### **2. Recursive Fibonacci (Assembly)**  
-A complete recursive implementation demonstrating:
-
-- Stack frame setup/teardown  
-- Saving registers (`rbx`)  
-- Multiple recursive calls  
-- Returning values in `eax`  
-
-### **3. Linear Search (Assembly)**  
-Sequential search implemented using:
-
-- Pointer arithmetic (`(%rdi, %rcx, 4)`)  
-- Looping and comparison  
-- Returning index or `-1`  
-
-### **4. Binary Search (Assembly)**  
-Divide‑and‑conquer search using:
-
-- Midpoint calculation  
-- Branching logic  
-- Efficient memory access  
-- Returning index or `-1`  
+### **3. Stack-Based Array Manipulation (x86‑64 Assembly)**  
+Low‑level array manipulation directly on the stack using register arithmetic, explicit memory addressing, and manual control flow.  
+**Project folder:** [`lab08`](lab08/README.md)
 
 ---
 
-## 🎮 Sokoban / Star‑Pusher Game Project (C + ncurses)
-
-A full interactive terminal game built using:
-
-- **ncurses** for graphics  
-- Window creation, borders, color pairs  
-- Player movement and collision logic  
-- Map loading from external files  
-- Struct‑based player state  
-- Valid move checking  
-- Pushing stars, goals, and win detection  
-- Step counter and score window  
-- Makefile‑based build system  
-
-Key files include:
-
-- `cs330_sokoban_game.c` — main game logic  
-- `sok_header.h` — struct definitions and extern variables  
-- `Makefile` — build, run, and debug targets  
-- `maps.txt` — level data  
+## 🧠 Skills Demonstrated
+- x86‑64 Assembly (AT&T syntax)  
+- System V AMD64 calling conventions  
+- Stack frames, recursion, register preservation  
+- Pointer arithmetic & memory layout  
+- Terminal graphics with ncurses  
+- Makefile‑based build automation  
+- Integration of C and assembly  
+- CPU architecture fundamentals  
 
 ---
 
-## 🛠️ Tools & Skills Used
+## ▶️ Build & Run (Examples)
 
-- **x86‑64 Assembly (AT&T syntax)**  
-- **GCC** for compiling C and assembly  
-- **GDB** for debugging  
-- **Makefiles** for automation  
-- **ncurses** for terminal UI  
-- **Linux command‑line environment**  
-- Understanding of CPU registers, stack, memory, and calling conventions  
+### Assembly Projects
+```bash
+make
+./asgn6
+./asgn8
+```
 
----
-
-## 📂 Repository Contents
-
-- `*.s` — assembly implementations (prime factors, Fibonacci, searches)  
-- `cs330_sokoban_game.c` — Sokoban game source  
-- `sok_header.h` — shared header  
-- `Makefile` — build/run/debug automation  
-- `maps.txt` — game level data  
-- Additional helper files and test programs  
-
----
-
-## 🚀 How to Build & Run (Sokoban)
-
+### Sokoban Game
 ```bash
 make
 ./cs330_sokoban_game
+```
+
